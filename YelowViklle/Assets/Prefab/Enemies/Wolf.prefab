@@ -65,14 +65,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 2659546100960921565}
   checkRadius: 5
-  shouldRotate: 0
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
   target:
   - {fileID: 0}
   IsInChaseRange: 0
+  life: 0
   Isattacking: 0
+  rendererwolf: {fileID: 2659546102723780490}
+  Materials:
+  - {fileID: 2100000, guid: 6d2b113d58c864df4888864aa0b04912, type: 2}
+  - {fileID: 2100000, guid: 0564445022aac475e9578a39376e1435, type: 2}
 --- !u!1 &2659546101667633605
 GameObject:
   m_ObjectHideFlags: 0

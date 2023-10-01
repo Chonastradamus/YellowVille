@@ -9,7 +9,18 @@ public static class FlyweightPointer
     {
         speed = 2,
         Damage = 5,
-        Life = 10
+        Maxlife = 10
+    };
+
+    public static readonly FlyWeightEnemiesShoot EnemiesShooters = new FlyWeightEnemiesShoot()
+    {
+        FireRate = 2,
+    };
+
+    public static readonly FlyWeightEnemiesExplosive EnmeiesExplosive = new FlyWeightEnemiesExplosive()
+    {
+           explosionTime = 3,
+
     };
 
 }

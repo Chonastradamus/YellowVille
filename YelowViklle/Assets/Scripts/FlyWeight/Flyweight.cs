@@ -7,5 +7,6 @@ public class Flyweight
     public float maxLife; //Lectura
     public float speed; //Lectura
     public float Damage; //Lectura
+
 }
 

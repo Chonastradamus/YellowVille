@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class FlyWeightEnemies 
 {
-    public float Life; //Lectura
+    public float Maxlife; //Lectura
     public float speed; //Lectura
     public float Damage; //Lectura
+    public float attackCooldown;
 
 }

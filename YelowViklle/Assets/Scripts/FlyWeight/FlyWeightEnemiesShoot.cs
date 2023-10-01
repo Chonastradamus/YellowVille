@@ -5,5 +5,6 @@ using UnityEngine;
 public class FlyWeightEnemiesShoot
 {
     public float FireRate;
-    public float nexFireRate;
+
+
 }
