@@ -14,17 +14,20 @@ public class Model : MonoBehaviour,Idamagable
     [SerializeField] float JumpForce;
     [SerializeField] LayerMask Ground;
 
+    [SerializeField] GameObject[] Particules;
 
 
 
-
+    private void Awake()
+    {
+        OnGround = true;
+    }
     void Start()
     {
         controller = new(this);
         controller.onMovement += Move;
         controller.OnJump += Jump;
-
-        _view = new(_renderer, controller);
+        _view = new(_renderer, controller, Particules);
     }
 
     void Update()
@@ -49,12 +52,18 @@ public class Model : MonoBehaviour,Idamagable
     }
     public void Jump(float Jump)
     {
-     
-        transform.position += new Vector3(0, Jump, 0) * JumpForce * Time.deltaTime;
+       
+            transform.position += new Vector3(0, Jump, 0) * JumpForce * Time.deltaTime;
+        OnGround = false;
     }
-    public void Damage(LayerMask ColisionMask)
-    {
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == 6)
+        {
+            OnGround = true;
+        }
     }
- 
+
+
 }

@@ -6,19 +6,9 @@ using static UnityEngine.ParticleSystem;
 
 public class EWolfView 
 {
+    //tp1 Juan Guastini
      Renderer _renderer;
-    // Material _basemateiral;
-     //Material _sleepMaterial;
     Material[] _Materials;
-
-    /*    public EWolfView( Renderer renderer, Material[] materials,Ewolf controler)
-        {
-
-            _Materials = materials;
-            controler.Detection += HasDetected;
-        }*/
-
-
     #region BuilderSetThings
     public EWolfView SetControler(Ewolf controler)
     {

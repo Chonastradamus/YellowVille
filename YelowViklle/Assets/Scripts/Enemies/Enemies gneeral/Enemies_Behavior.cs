@@ -5,7 +5,7 @@ using UnityEngine;
 
 public  abstract class Enemies_Behavior : MonoBehaviour,Idamagable
 {
-    //TP2 - *Juan ignacio Guastini*.
+    //tp1 Juan Guastini
     [Header("Movement")]
     [SerializeField] Rigidbody _rb;
     [Header("Detecction")]

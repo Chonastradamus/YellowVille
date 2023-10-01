@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class View
 {
+    //tp1 Juan Guastini
     private Renderer _renderer;
-    public Material onMoveMaterial;
+     GameObject[] _particules;
     //private Animator _anim;
 
-    public View(Renderer renderer, Controller controller)
+    public View(Renderer renderer, Controller controller , GameObject[] particule)
     {
         _renderer = renderer;
-        //_anim = anim;
+        _particules = particule;
         controller.onMovement += OnMove;
     }
 
@@ -29,10 +30,5 @@ public class View
         }
     }
 
-    void Ondamage()
-    {
-        _renderer.material.color = Color.red;
-
-
-    }
+    
 }

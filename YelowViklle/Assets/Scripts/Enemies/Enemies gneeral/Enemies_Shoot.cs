@@ -7,7 +7,7 @@ public class Enemies_Shoot : EnemiesDamage
     public Transform firePoint;
     float fireForce = 15f;
     public GameObject BulletPrefab;
-    public float firerate = 2, NextfireTime = 0;
+    public float NextfireTime = 0;
 
     protected override void Update()
     {
@@ -32,7 +32,7 @@ public class Enemies_Shoot : EnemiesDamage
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
         rb.AddForce(firePoint.up * fireForce, ForceMode.Impulse);
-        NextfireTime = Time.time + 1f / firerate;
+        NextfireTime = Time.time + 1f / FlyweightPointer.EnemiesShooters.FireRate;
     }
 
     bool Canfire()

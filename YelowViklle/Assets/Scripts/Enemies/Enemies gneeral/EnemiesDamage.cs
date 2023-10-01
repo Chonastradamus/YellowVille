@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class EnemiesDamage : Enemies_Behavior
 {
+    //tp1 Juan Guastini
     public bool Isattacking;
     protected virtual void OnCollisionEnter(Collision collision)
     {

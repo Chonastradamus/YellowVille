@@ -20,7 +20,6 @@ public static class FlyweightPointer
     public static readonly FlyWeightEnemiesExplosive EnmeiesExplosive = new FlyWeightEnemiesExplosive()
     {
            explosionTime = 3,
-
     };
 
 }
