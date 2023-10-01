@@ -8,3 +8,4 @@ public class Flyweight
     public float speed; //Lectura
     public float Damage; //Lectura
 }
+

@@ -5,8 +5,9 @@ using UnityEngine;
 public interface Idamagable 
 {
 
-   public void TakeDamage (float dmg, float life)
+   public void TakeDamage (float dmg)
     {
+
     }
    
 }

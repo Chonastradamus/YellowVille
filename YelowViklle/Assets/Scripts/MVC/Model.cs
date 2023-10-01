@@ -10,11 +10,20 @@ public class Model : MonoBehaviour,Idamagable
     [SerializeField] float life;
     [SerializeField] float Speed;
 
+    [SerializeField] bool OnGround;
+    [SerializeField] float JumpForce;
+    [SerializeField] LayerMask Ground;
+
+
+
+
 
     void Start()
     {
         controller = new(this);
         controller.onMovement += Move;
+        controller.OnJump += Jump;
+
         _view = new(_renderer, controller);
     }
 
@@ -22,9 +31,15 @@ public class Model : MonoBehaviour,Idamagable
     {
         controller.onUpdate();
     }
-    public void TakeDamage(float dmg, float life)
+    public void TakeDamage(float dmg)
     {
         life = -dmg;
+
+            if (life <= 0)
+            {
+            this.gameObject.SetActive(false);
+            }
+        
     }
 
     public void Move(float horizontal, float vertical)
@@ -32,12 +47,14 @@ public class Model : MonoBehaviour,Idamagable
 
         transform.position += new Vector3(horizontal, 0, vertical) * Speed * Time.deltaTime;
     }
-
-    private void OnCollisionEnter(Collision collision)
+    public void Jump(float Jump)
     {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            
-        }
+     
+        transform.position += new Vector3(0, Jump, 0) * JumpForce * Time.deltaTime;
     }
+    public void Damage(LayerMask ColisionMask)
+    {
+
+    }
+ 
 }

@@ -4,17 +4,12 @@ using UnityEngine;
 
 public static class FlyweightPointer
 {
-    public static readonly Flyweight EnemyBase = new Flyweight()
+   
+    public static readonly FlyWeightEnemies enemies = new FlyWeightEnemies()
     {
-        speed = 5,
+        speed = 2,
         Damage = 5,
-        maxLife = 10
-
-    };
-
-    public static readonly Flyweight E_WOLF = new Flyweight()
-    {
-        
+        Life = 10
     };
 
 }

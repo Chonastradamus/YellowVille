@@ -6,8 +6,10 @@ using System;
 public class Controller
 {
     public event Action<float, float> onMovement = delegate { };
+    public event Action<float> OnJump = delegate { };
 
     public Action onUpdate;
+    public Action onJump;
 
     private Model _model;
     public Controller(Model model) 
@@ -29,6 +31,8 @@ public class Controller
 
     private void Jump()
     {
+        var Jump = Input.GetAxisRaw("Jump");
+        OnJump(Jump);
 
     }
 
