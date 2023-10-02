@@ -22,6 +22,7 @@ public  abstract class Enemies_Behavior : MonoBehaviour,Idamagable
     {
         life = FlyweightPointer.enemies.Maxlife;
     }
+
     protected virtual void Update()
     {
        detection();
@@ -43,7 +44,6 @@ public  abstract class Enemies_Behavior : MonoBehaviour,Idamagable
 
     void MoveEnemies()
     {
-
         transform.Translate(Vector3.forward * FlyweightPointer.enemies.speed * Time.deltaTime);
         Vector3 direction = target[0].position - transform.position;
         direction.y = 0; // Para evitar movimientos verticales
@@ -59,12 +59,10 @@ public  abstract class Enemies_Behavior : MonoBehaviour,Idamagable
             Destroy(this.gameObject);
         }
     }
+
     protected virtual void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, checkRadius);
     }
-
-
-
 }
