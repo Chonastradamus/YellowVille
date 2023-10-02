@@ -52,8 +52,7 @@ public  abstract class Enemies_Behavior : MonoBehaviour,Idamagable
 
     public void TakeDamage(int dmg)
     {
-       life -= dmg;
-
+        life -= dmg;
 
         if (life <= 0)
         {

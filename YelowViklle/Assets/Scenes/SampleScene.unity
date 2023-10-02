@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -407,10 +407,6 @@ PrefabInstance:
     - target: {fileID: 2659546100960921566, guid: b68e618176db74729834ef3a52dfc8a3, type: 3}
       propertyPath: m_Name
       value: Wolf (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659546100960921566, guid: b68e618176db74729834ef3a52dfc8a3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b68e618176db74729834ef3a52dfc8a3, type: 3}
@@ -1062,10 +1058,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7388301538502665648, guid: 3480cbacd755d4bc2bdcfbf799a02f6e, type: 3}
-      propertyPath: Ground.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 7388301538502665649, guid: 3480cbacd755d4bc2bdcfbf799a02f6e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1084,7 +1076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7388301538502665651, guid: 3480cbacd755d4bc2bdcfbf799a02f6e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.79
+      value: -3.715
       objectReference: {fileID: 0}
     - target: {fileID: 7388301538502665651, guid: 3480cbacd755d4bc2bdcfbf799a02f6e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1113,10 +1105,6 @@ PrefabInstance:
     - target: {fileID: 7388301538502665651, guid: 3480cbacd755d4bc2bdcfbf799a02f6e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7388301538964068115, guid: 3480cbacd755d4bc2bdcfbf799a02f6e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3480cbacd755d4bc2bdcfbf799a02f6e, type: 3}

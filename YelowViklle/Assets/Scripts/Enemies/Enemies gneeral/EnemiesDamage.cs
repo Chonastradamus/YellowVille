@@ -18,8 +18,7 @@ public abstract class EnemiesDamage : Enemies_Behavior
              damagableInterface.TakeDamage(FlyweightPointer.enemies.Damage);  
              Isattacking = false;
            
-            }
-        
+            }       
         }
     }
 

@@ -7,11 +7,14 @@ public class Controller
 {
     public event Action<float, float> onMovement = delegate { };
     public event Action<float> OnJump = delegate { };
+    public event Action<float> Onshoot = delegate { };
 
     public Action onUpdate;
     public Action onJump;
+    public Action onshoot;
 
     private Model _model;
+
     public Controller(Model model) 
     {
         _model = model;
@@ -33,11 +36,14 @@ public class Controller
     {
         var Jump = Input.GetAxisRaw("Jump");
         OnJump(Jump);
-
     }
 
     private void Attack()
     {
-
+        if (Input.GetButtonDown("Fire1"))
+        {
+          var shoot = Input.GetAxisRaw("Fire1");
+          Onshoot(shoot);          
+        }
     }
 }

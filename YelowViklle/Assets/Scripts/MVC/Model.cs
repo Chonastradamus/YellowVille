@@ -16,7 +16,11 @@ public class Model : MonoBehaviour,Idamagable
 
     [SerializeField] GameObject[] Particules;
 
-
+    [Header("Factory_Objetcpool")]
+    [SerializeField] public Bullet prefab;
+    Factory<Bullet> _factory;
+    ObjectPool<Bullet> _objectPool;
+    public GameObject Firepoint;
 
     private void Awake()
     {
@@ -28,6 +32,11 @@ public class Model : MonoBehaviour,Idamagable
         controller.onMovement += Move;
         controller.OnJump += Jump;
         _view = new(_renderer, controller, Particules);
+
+        controller.Onshoot += shoot;
+
+        _factory = new BulletFactory(prefab);
+        _objectPool = new ObjectPool<Bullet>(_factory.GetObj, Bullet.TurnOff, Bullet.TurnOn, 4);
     }
 
     void Update()
@@ -40,7 +49,7 @@ public class Model : MonoBehaviour,Idamagable
 
             if (life <= 0)
             {
-            this.gameObject.SetActive(false);
+              this.gameObject.SetActive(false);
             }
         
     }
@@ -53,7 +62,7 @@ public class Model : MonoBehaviour,Idamagable
     public void Jump(float Jump)
     {
        
-            transform.position += new Vector3(0, Jump, 0) * JumpForce * Time.deltaTime;
+        transform.position += new Vector3(0, Jump, 0) * JumpForce * Time.deltaTime;
         OnGround = false;
     }
 
@@ -63,6 +72,14 @@ public class Model : MonoBehaviour,Idamagable
         {
             OnGround = true;
         }
+    }
+
+    public void shoot(float fire)
+    {
+            var bullet = _objectPool.Get();
+            bullet.AddReference(_objectPool);
+            bullet.transform.position = Firepoint.transform.position;
+            bullet.transform.forward = Firepoint.transform.forward;  
     }
 
 
