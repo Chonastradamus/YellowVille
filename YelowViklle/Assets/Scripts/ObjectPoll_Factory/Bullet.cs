@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed;
     public float counter;
     public float lifetime;
+    public float Dmg;
     ObjectPool<Bullet> _objectPool;
 
 
@@ -44,7 +45,7 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.layer == 7 && damagableInterface != null)
         {
-            damagableInterface.TakeDamage(5);
+            damagableInterface.TakeDamage(FlyweightPointer.bullet.Dmg);
             TurnOff(this);
             _objectPool.StockAdd(this);
         }
