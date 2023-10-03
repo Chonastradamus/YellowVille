@@ -40,9 +40,12 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 7)
+        Idamagable damagableInterface = collision.gameObject.GetComponent<Idamagable>();
+
+        if (collision.gameObject.layer == 7 && damagableInterface != null)
         {
-            collision.gameObject.GetComponent<Ewolf>().TakeDamage(2);
+            damagableInterface.TakeDamage(5);
+            TurnOff(this);
             _objectPool.StockAdd(this);
         }
     }

@@ -50,19 +50,22 @@ public  abstract class Enemies_Behavior : MonoBehaviour,Idamagable
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.1f);
     }
 
-    public void TakeDamage(int dmg)
-    {
-        life -= dmg;
-
-        if (life <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
+   
 
     protected virtual void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, checkRadius);
+    }
+
+    public void TakeDamage(float dmg)
+    {
+        life -= dmg;
+        print("golpeo");
+
+        if (life <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
