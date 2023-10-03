@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2659546100960921564, guid: b68e618176db74729834ef3a52dfc8a3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.47
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: 2659546100960921564, guid: b68e618176db74729834ef3a52dfc8a3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -842,22 +842,6 @@ PrefabInstance:
     - target: {fileID: 2659546100960921566, guid: b68e618176db74729834ef3a52dfc8a3, type: 3}
       propertyPath: m_Name
       value: Wolf (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659546100960921566, guid: b68e618176db74729834ef3a52dfc8a3, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659546100960921566, guid: b68e618176db74729834ef3a52dfc8a3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659546101667633605, guid: b68e618176db74729834ef3a52dfc8a3, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659546102723780492, guid: b68e618176db74729834ef3a52dfc8a3, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b68e618176db74729834ef3a52dfc8a3, type: 3}

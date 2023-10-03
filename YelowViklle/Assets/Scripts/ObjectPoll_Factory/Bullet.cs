@@ -7,7 +7,6 @@ public class Bullet : MonoBehaviour
     public float speed;
     public float counter;
     public float lifetime;
-    public float Dmg;
     ObjectPool<Bullet> _objectPool;
 
 

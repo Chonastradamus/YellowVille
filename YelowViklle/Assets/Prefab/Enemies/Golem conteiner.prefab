@@ -232,6 +232,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8330610666187807110, guid: d525cd7652b97421cbda0eed7bddb6c4, type: 3}
+      propertyPath: whatIsPlayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330610666187807110, guid: d525cd7652b97421cbda0eed7bddb6c4, type: 3}
       propertyPath: target.Array.data[0]
       value: 
       objectReference: {fileID: 8330610664991970879}
