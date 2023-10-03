@@ -14,13 +14,11 @@ public class Model : MonoBehaviour,Idamagable
     [SerializeField] float JumpForce;
     [SerializeField] LayerMask Ground;
 
-    [SerializeField] GameObject[] Particules;
-
     [Header("Factory_Objetcpool")]
     [SerializeField] public Bullet prefab;
     Factory<Bullet> _factory;
     ObjectPool<Bullet> _objectPool;
-    public GameObject Firepoint;
+    public GameObject[] Firepoint;
 
     private void Awake()
     {
@@ -31,7 +29,7 @@ public class Model : MonoBehaviour,Idamagable
         controller = new(this);
         controller.onMovement += Move;
         controller.OnJump += Jump;
-        _view = new(_renderer, controller, Particules);
+        _view = new(_renderer, controller);
 
         controller.Onshoot += shoot;
 
@@ -78,8 +76,8 @@ public class Model : MonoBehaviour,Idamagable
     {
             var bullet = _objectPool.Get();
             bullet.AddReference(_objectPool);
-            bullet.transform.position = Firepoint.transform.position;
-            bullet.transform.forward = Firepoint.transform.forward;  
+            bullet.transform.position = Firepoint[0].transform.position;
+            bullet.transform.forward = Firepoint[0].transform.forward;  
     }
 
 
