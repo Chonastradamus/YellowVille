@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public float counter;
     public float lifetime;
     ObjectPool<Bullet> _objectPool;
+    public Rigidbody rb;
 
 
     void Update()

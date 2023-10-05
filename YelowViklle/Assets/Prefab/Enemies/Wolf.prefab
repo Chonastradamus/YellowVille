@@ -72,6 +72,7 @@ MonoBehaviour:
   - {fileID: 0}
   IsInChaseRange: 0
   life: 0
+  Timechase: 5
   Isattacking: 0
   rendererwolf: {fileID: 2659546102723780490}
   Materials:

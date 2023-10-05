@@ -70,6 +70,7 @@ public class Model : MonoBehaviour,Idamagable
         {
             OnGround = true;
         }
+
     }
 
     public void shoot(float fire)

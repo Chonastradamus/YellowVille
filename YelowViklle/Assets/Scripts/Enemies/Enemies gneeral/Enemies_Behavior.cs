@@ -16,6 +16,8 @@ public  abstract class Enemies_Behavior : MonoBehaviour,Idamagable
     [Header("Life")]
     public float life;
     [SerializeField] Idamagable idamagable;
+    [Header("rune")]
+    public float Timechase;
 
 
     private void Awake()
@@ -42,6 +44,11 @@ public  abstract class Enemies_Behavior : MonoBehaviour,Idamagable
         }
     }
 
+    public virtual void aviso(params object[] parameter)
+    {       
+        MoveEnemies();  
+    }
+
     void MoveEnemies()
     {
         transform.Translate(Vector3.forward * FlyweightPointer.enemies.speed * Time.deltaTime);
@@ -49,8 +56,6 @@ public  abstract class Enemies_Behavior : MonoBehaviour,Idamagable
         direction.y = 0; // Para evitar movimientos verticales
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.1f);
     }
-
-   
 
     protected virtual void OnDrawGizmos()
     {
@@ -67,5 +72,14 @@ public  abstract class Enemies_Behavior : MonoBehaviour,Idamagable
         {
             gameObject.SetActive(false);
         }
+    }
+
+    private IEnumerator Llamadoplayer()
+    {
+        IsInChaseRange = true;
+
+        yield return new WaitForSeconds(Timechase);
+
+        IsInChaseRange = false;
     }
 }

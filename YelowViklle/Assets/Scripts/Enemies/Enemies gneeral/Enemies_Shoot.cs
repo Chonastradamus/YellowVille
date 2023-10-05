@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Enemies_Shoot : EnemiesDamage
 {
-    public Transform firePoint;
+    //public Transform firePoint;
     float fireForce = 15f;
-    public GameObject BulletPrefab;
     public float NextfireTime = 0;
+
+    [Header("Factory_Objetcpool")]
+    [SerializeField] public Bullet prefab;
+    Factory<Bullet> _factory;
+    ObjectPool<Bullet> _objectPool;
+    public GameObject[] Firepoint;
 
     protected override void Update()
     {
@@ -16,7 +21,7 @@ public class Enemies_Shoot : EnemiesDamage
         {
             if (Canfire())
             {
-                // Shoot();
+                 Shoot();
                 //Aca usar Factory y object pool
 
             }
@@ -27,12 +32,18 @@ public class Enemies_Shoot : EnemiesDamage
     public void Shoot()
     {
         //Aca usar Factory y object pool
-        GameObject bullet = Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
+        //GameObject bullet = Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
 
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+       // Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
-        rb.AddForce(firePoint.up * fireForce, ForceMode.Impulse);
-        NextfireTime = Time.time + 1f / FlyweightPointer.EnemiesShooters.FireRate;
+       // rb.AddForce(firePoint.up * fireForce, ForceMode.Impulse);
+
+        var bullet = _objectPool.Get();
+        bullet.AddReference(_objectPool);
+        bullet.transform.position = Firepoint[0].transform.position;
+        bullet.transform.forward = Firepoint[0].transform.forward;
+
+       // NextfireTime = Time.time + 1f / FlyweightPointer.EnemiesShooters.FireRate;
     }
 
     bool Canfire()
