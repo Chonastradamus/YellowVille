@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Model : MonoBehaviour,Idamagable
+public class Model : Rewind,Idamagable
 {
     Controller controller;
     View _view;
     [SerializeField] Renderer _renderer;
-    [SerializeField] float life;
+    [SerializeField] public float life;
     [SerializeField] float Speed;
 
     [SerializeField] bool OnGround;
@@ -81,5 +81,22 @@ public class Model : MonoBehaviour,Idamagable
             bullet.transform.forward = Firepoint[0].transform.forward;  
     }
 
+    public override void Load()
+    {
+        if (!currentState.IsRemember()) return;
 
+        else
+        {
+            var col = currentState.Remember();
+            transform.position = (Vector3)col.paramameters[0];
+            transform.rotation = (Quaternion)col.paramameters[1];
+            life = (float)col.paramameters[2];
+           
+        }
+
+    }
+    public override void Save()
+    {
+        currentState.Rec(this.transform.position, this.transform.rotation, life);
+    }
 }
