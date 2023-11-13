@@ -5,6 +5,7 @@ using System;
 
 public class Controller
 {
+
     public event Action<float, float> onMovement = delegate { };
     public event Action<float> OnJump = delegate { };
     public event Action<float> Onshoot = delegate { };
@@ -46,4 +47,16 @@ public class Controller
           Onshoot(shoot);          
         }
     }
+
+    public void CreationTotem()
+    {
+        //usar la habiliad de apreta la q para llamar a la habilidad de crear en totem
+
+    }
+    public void UsegeTotem()
+    {
+        //usar la habiliad de apreta la e para llamar a la habilidad de volver al totem
+
+    }
+
 }

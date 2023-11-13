@@ -6,7 +6,7 @@ public abstract class Rewind : MonoBehaviour
 {
     public MementoState currentState;
 
-    private void Awake()
+    public virtual void Awake()
     {
         currentState = new MementoState();
     }

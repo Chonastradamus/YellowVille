@@ -74,12 +74,12 @@ public  abstract class Enemies_Behavior : MonoBehaviour,Idamagable
         }
     }
 
-    private IEnumerator Llamadoplayer()
+   /* private IEnumerator Llamadoplayer()
     {
         IsInChaseRange = true;
 
         yield return new WaitForSeconds(Timechase);
 
         IsInChaseRange = false;
-    }
+    }*/
 }

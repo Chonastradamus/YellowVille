@@ -20,8 +20,9 @@ public class Model : Rewind,Idamagable
     ObjectPool<Bullet> _objectPool;
     public GameObject[] Firepoint;
 
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         OnGround = true;
     }
     void Start()
@@ -64,6 +65,7 @@ public class Model : Rewind,Idamagable
         OnGround = false;
     }
 
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.layer == 6)
@@ -80,6 +82,8 @@ public class Model : Rewind,Idamagable
             bullet.transform.position = Firepoint[0].transform.position;
             bullet.transform.forward = Firepoint[0].transform.forward;  
     }
+
+
 
     public override void Load()
     {
@@ -99,4 +103,7 @@ public class Model : Rewind,Idamagable
     {
         currentState.Rec(this.transform.position, this.transform.rotation, life);
     }
+
+
+
 }
