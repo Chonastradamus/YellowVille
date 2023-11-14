@@ -19,6 +19,10 @@ public class Model : Rewind,Idamagable
     Factory<Bullet> _factory;
     ObjectPool<Bullet> _objectPool;
     public GameObject[] Firepoint;
+    public GameObject[] Totem;
+    public bool SetTotem = false;
+
+
 
     public override void Awake()
     {
@@ -30,6 +34,8 @@ public class Model : Rewind,Idamagable
         controller = new(this);
         controller.onMovement += Move;
         controller.OnJump += Jump;
+        controller.OnTotem += totem;
+
         _view = new(_renderer, controller);
 
         controller.Onshoot += shoot;
@@ -104,6 +110,21 @@ public class Model : Rewind,Idamagable
         currentState.Rec(this.transform.position, this.transform.rotation, life);
     }
 
+    public void totem(bool Q, bool E)
+    {
+        if (Q)
+        {
+            Totem[0].SetActive(true);
+            Totem[0].gameObject.transform.position = this.gameObject.transform.position;  
 
+            print("set totem");
+        }
+        if (E)
+        {
+            Totem[0].SetActive(true);
+            print("desactive totem");
+        }
 
+    }
+  
 }

@@ -9,10 +9,13 @@ public class Controller
     public event Action<float, float> onMovement = delegate { };
     public event Action<float> OnJump = delegate { };
     public event Action<float> Onshoot = delegate { };
+    public event Action<bool,bool> OnTotem = delegate { };
 
     public Action onUpdate;
     public Action onJump;
     public Action onshoot;
+
+    public Action onTotem;
 
     private Model _model;
 
@@ -22,6 +25,9 @@ public class Controller
         onUpdate += Movement;
         onUpdate += Jump;
         onUpdate += Attack;
+        onUpdate += Totem;
+
+
     }
 
 
@@ -48,15 +54,13 @@ public class Controller
         }
     }
 
-    public void CreationTotem()
+    public void Totem()
     {
-        //usar la habiliad de apreta la q para llamar a la habilidad de crear en totem
+        var totem = Input.GetKeyDown(KeyCode.E);
+        var destroy = Input.GetKeyDown(KeyCode.Q);
+
+        OnTotem(totem,destroy);
 
     }
-    public void UsegeTotem()
-    {
-        //usar la habiliad de apreta la e para llamar a la habilidad de volver al totem
-
-    }
-
+   
 }
