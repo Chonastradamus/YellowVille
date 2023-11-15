@@ -9,13 +9,15 @@ public class Controller
     public event Action<float, float> onMovement = delegate { };
     public event Action<float> OnJump = delegate { };
     public event Action<float> Onshoot = delegate { };
-    public event Action<bool,bool> OnTotem = delegate { };
+    public event Action<bool> OnTotem = delegate { };
+    public event Action<bool> OffTotem = delegate { };
+
 
     public Action onUpdate;
     public Action onJump;
     public Action onshoot;
 
-    public Action onTotem;
+    public Action TheTotem;
 
     private Model _model;
 
@@ -25,7 +27,8 @@ public class Controller
         onUpdate += Movement;
         onUpdate += Jump;
         onUpdate += Attack;
-        onUpdate += Totem;
+        onUpdate += onTotem;
+        onUpdate += offTotem;
 
 
     }
@@ -54,13 +57,20 @@ public class Controller
         }
     }
 
-    public void Totem()
+    public void onTotem()
     {
         var totem = Input.GetKeyDown(KeyCode.E);
-        var destroy = Input.GetKeyDown(KeyCode.Q);
+  
 
-        OnTotem(totem,destroy);
+        OnTotem(totem);
 
     }
-   
+    public void offTotem()
+    {
+        var totem = Input.GetKeyDown(KeyCode.Q);
+
+
+        OffTotem(totem);
+
+    }
 }
