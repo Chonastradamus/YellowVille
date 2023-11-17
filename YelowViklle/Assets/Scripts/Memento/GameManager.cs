@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Rewind[] rewinds;
+ 
 
      void Update()
     {

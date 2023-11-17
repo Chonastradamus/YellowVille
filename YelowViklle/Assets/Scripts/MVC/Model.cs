@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class Model : Rewind,Idamagable
     ObjectPool<Bullet> _objectPool;
     public GameObject[] Firepoint;
     public GameObject[] Totem;
+   // public Rewind rewind;
+   // public GameManager GM;
     
 
 
@@ -28,6 +31,7 @@ public class Model : Rewind,Idamagable
     {
         base.Awake();
         OnGround = true;
+ 
     }
     void Start()
     {
@@ -116,8 +120,8 @@ public class Model : Rewind,Idamagable
         if (Q)
         {
             Totem[0].SetActive(true);
-            Totem[0].gameObject.transform.position = this.gameObject.transform.position;  
-
+            Totem[0].gameObject.transform.position = this.gameObject.transform.position;
+          //LoadManager();
             print("set totem");
         }
     
@@ -127,9 +131,28 @@ public class Model : Rewind,Idamagable
         if (E)
         {
             Totem[0].SetActive(false);
-
+           //SaveManager();
             print("destroy totem");
         }
 
     }
+    /*
+    public void LoadManager()
+    {
+        
+        
+            print("Load");
+            rewind.Load();
+        
+    }
+
+    public void SaveManager()
+    {
+      
+            print("save");
+            rewind.Save();
+        
+    }*/
+
+
 }
