@@ -1431,7 +1431,7 @@ PrefabInstance:
       objectReference: {fileID: 1163797373}
     - target: {fileID: 2907189798337514455, guid: 92ba41891eda24e1dbd9520dd79aa783, type: 3}
       propertyPath: checkRadius
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2907189798337514455, guid: 92ba41891eda24e1dbd9520dd79aa783, type: 3}
       propertyPath: players.Array.data[0]

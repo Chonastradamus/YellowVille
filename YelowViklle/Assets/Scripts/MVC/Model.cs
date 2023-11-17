@@ -136,23 +136,7 @@ public class Model : Rewind,Idamagable
         }
 
     }
-    /*
-    public void LoadManager()
-    {
-        
-        
-            print("Load");
-            rewind.Load();
-        
-    }
 
-    public void SaveManager()
-    {
-      
-            print("save");
-            rewind.Save();
-        
-    }*/
 
 
 }
