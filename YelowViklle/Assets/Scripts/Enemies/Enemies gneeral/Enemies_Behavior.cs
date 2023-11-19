@@ -61,7 +61,7 @@ public  abstract class Enemies_Behavior : MonoBehaviour,Idamagable
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, checkRadius);
-    }
+    } 
 
     public void TakeDamage(float dmg)
     {

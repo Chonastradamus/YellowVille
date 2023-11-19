@@ -5,12 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Rewind[] rewinds;
+    
  
 
      void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q)) {LoadManager();}
-        if (Input.GetKeyDown(KeyCode.E)) { SaveManager(); }
+        if (Input.GetKeyDown(KeyCode.E)) { SaveManager();}
 
     }
 
