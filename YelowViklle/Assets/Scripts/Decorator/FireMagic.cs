@@ -19,4 +19,6 @@ public class FireMagic : MagicDecorator
     {
         return _magic.Power() + 5;
     }
+
+
 }

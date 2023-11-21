@@ -8,6 +8,8 @@ public class Crosier : Magic
     {
         _description = description;
     }
+
+  
     public override string GetDescrition()
     {
         return _description;
@@ -17,4 +19,11 @@ public class Crosier : Magic
     {
         return 5;
     }
+    public override Magic Add()
+    {
+        return this;
+    }
+
+
+
 }

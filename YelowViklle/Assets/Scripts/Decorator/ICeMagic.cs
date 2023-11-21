@@ -18,4 +18,6 @@ public class ICeMagic : MagicDecorator
     {
         return _magic.Power() + 10;
     }
+    
+
 }

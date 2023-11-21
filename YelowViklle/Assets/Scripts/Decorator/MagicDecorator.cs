@@ -5,4 +5,8 @@ using UnityEngine;
 public abstract class MagicDecorator : Magic
 {
     protected Magic _magic;
+    public override Magic Add()
+    {
+        return _magic;
+    }
 }
