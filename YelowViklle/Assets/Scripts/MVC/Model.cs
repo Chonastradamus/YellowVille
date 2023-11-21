@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Model : Rewind,Idamagable
+public class Model : Rewind, Idamagable
 {
     Controller controller;
     View _view;
-    [SerializeField] Renderer _renderer;
+      [SerializeField] Renderer _renderer;
     [SerializeField] public float life;
     [SerializeField] float Speed;
 
@@ -95,11 +95,7 @@ public class Model : Rewind,Idamagable
             bullet.AddReference(_objectPool);
             bullet.transform.position = item.transform.position;
             bullet.transform.forward = item.transform.forward;  
-
         }
-
-
-
     }
 
 
