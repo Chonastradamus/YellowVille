@@ -9,7 +9,7 @@ public class Totem : MonoBehaviour
     public LayerMask whatIsPlayer;
     public Transform[] players;
     [SerializeField] public bool IsInChaseRange;
-    public GameManager manager;
+
 
 
     private void Update()
@@ -19,7 +19,7 @@ public class Totem : MonoBehaviour
         if (!IsInChaseRange)
         {
             this.gameObject.SetActive(false);
-            manager.LoadManager();
+            GameManager.instance.LoadManager();
         }
 
     }

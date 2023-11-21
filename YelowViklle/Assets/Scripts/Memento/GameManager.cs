@@ -5,10 +5,17 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Rewind[] rewinds;
-    
- 
 
-     void Update()
+    public static GameManager instance;
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q)) {LoadManager();}
         if (Input.GetKeyDown(KeyCode.E)) { SaveManager();}

@@ -60,7 +60,7 @@ public class Controller
     public void onTotem()
     {
         var totem = Input.GetKeyDown(KeyCode.E);
-  
+        if (totem) { GameManager.instance.SaveManager(); }
 
         OnTotem(totem);
 
@@ -68,6 +68,7 @@ public class Controller
     public void offTotem()
     {
         var totem = Input.GetKeyDown(KeyCode.Q);
+        if (totem) { GameManager.instance.LoadManager(); }
 
 
         OffTotem(totem);

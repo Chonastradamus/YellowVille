@@ -41,10 +41,10 @@ public class Model : Rewind,Idamagable
         controller.OnJump += Jump;
         controller.OnTotem += Activetotem;
         controller.OffTotem += Desactivetotem;
+        controller.Onshoot += shoot;
 
         _view = new(_renderer, controller);
 
-        controller.Onshoot += shoot;
 
         _factory = new BulletFactory(prefab);
         _objectPool = new ObjectPool<Bullet>(_factory.GetObj, Bullet.TurnOff, Bullet.TurnOn, 4);
@@ -89,10 +89,17 @@ public class Model : Rewind,Idamagable
 
     public void shoot(float fire)
     {
+        foreach (var item in Firepoint)
+        {
             var bullet = _objectPool.Get();
             bullet.AddReference(_objectPool);
-            bullet.transform.position = Firepoint[0].transform.position;
-            bullet.transform.forward = Firepoint[0].transform.forward;  
+            bullet.transform.position = item.transform.position;
+            bullet.transform.forward = item.transform.forward;  
+
+        }
+
+
+
     }
 
 
@@ -122,10 +129,6 @@ public class Model : Rewind,Idamagable
         {
             Totem[0].SetActive(true);
             Totem[0].gameObject.transform.position = this.gameObject.transform.position;
-            print("set totem");
-           // gm.LoadManager();
-            
-
         }
 
     }
@@ -134,8 +137,6 @@ public class Model : Rewind,Idamagable
         if (E)
         {
             Totem[0].SetActive(false);
-            print("destroy totem");
-           // gm.SaveManager();
         }
 
     }
