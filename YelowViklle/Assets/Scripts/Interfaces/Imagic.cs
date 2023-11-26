@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface Imagic
 {
-    
+    public void AddMagic(Magic power);
+    public Magic GetActualMagic();
 }

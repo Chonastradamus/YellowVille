@@ -4,26 +4,15 @@ using UnityEngine;
 
 public class Crosier : Magic
 {
-    public Crosier(string description)
+    Magic _magic;
+    public Crosier(Magic mg)
     {
-        _description = description;
-    }
+        _magic = mg;
 
-  
-    public override string GetDescrition()
-    {
-        return _description;
     }
-
     public override int Power()
     {
         return 5;
     }
-    public override Magic Add()
-    {
-        return this;
-    }
-
-
 
 }

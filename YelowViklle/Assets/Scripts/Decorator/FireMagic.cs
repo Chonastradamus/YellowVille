@@ -10,10 +10,7 @@ public class FireMagic : MagicDecorator
         _magic = mg;
 
     }
-    public override string GetDescrition()
-    {
-        return _magic.GetDescrition() + ",Fire";
-    }
+   
 
     public override int Power()
     {

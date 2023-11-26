@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1595534939173366063}
-  - component: {fileID: 9002384255339916198}
   m_Layer: 7
   m_Name: Collider
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 2491130030943793146}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &9002384255339916198
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6123511271039344245}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8144713395836381964
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,6 +105,7 @@ MonoBehaviour:
   life: 10
   Timechase: 0
   Isattacking: 0
+  Dmg: 0
 --- !u!1 &8578741109414021178
 GameObject:
   m_ObjectHideFlags: 0

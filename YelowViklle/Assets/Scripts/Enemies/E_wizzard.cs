@@ -2,41 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E_wizzard : EnemiesDamage
+public class E_wizzard : EnemiesDamage, Imagic
 {
     Magic CurrentPower;
-    public float Dmg;
+    public int Dmg;
 
     private void Start()
     {
-        CurrentPower = new Crosier("Wood Ceoiser");
-        CurrentPower = new ICeMagic(CurrentPower);
-        CurrentPower = new FireMagic(CurrentPower);
-        CurrentPower = new ICeMagic(CurrentPower);
-        CurrentPower = new ICeMagic(CurrentPower);
-        CurrentPower = new ICeMagic(CurrentPower);
-        CurrentPower = new ICeMagic(CurrentPower);
-
-        Debug.Log(CurrentPower.GetDescrition() + " " + CurrentPower.Power());
-        Dmg += FlyweightPointer.enemies.Damage;
-        Dmg += CurrentPower.Power();
+        CurrentPower = new Crosier(CurrentPower);
+       // CurrentPower = new FireMagic(CurrentPower);
+      
+      
     }
-    // utilziar decorator para hacer el poder del mago aumente
+    
 
     protected override void Update()
     {
+        Dmg = CurrentPower.Power();
         base.Update();
         print(Dmg);
+       // Debug.Log(CurrentPower.Power());
 
     }
-    private void OnTriggerEnter(Collider other)
+
+    public void AddMagic(Magic newmagic)
     {
-        if(other.gameObject.tag == "Fire")
-        {
-            print("pepe");
-            CurrentPower = CurrentPower.Add();
-        }
+        print("hechizero");
+        CurrentPower = newmagic;
     }
+
+    public Magic GetActualMagic()
+    {
+        return CurrentPower;
+    }
+
 
     protected override void OnDrawGizmos()
     {
