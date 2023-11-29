@@ -14,9 +14,6 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-
-   
-
     public void LoadManager()
     {
         foreach (var item in rewinds)
@@ -34,7 +31,6 @@ public class GameManager : MonoBehaviour
             item.Save();
         }
     }
-
 
 }
 

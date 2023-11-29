@@ -49,5 +49,13 @@ public class Bullet : MonoBehaviour
             TurnOff(this);
             _objectPool.StockAdd(this);
         }
+
+        else if (collision.gameObject.layer == 3 && damagableInterface != null)
+        {
+            Debug.Log("player recibe daño");
+            damagableInterface.TakeDamage(FlyweightPointer.bullet.Dmg);
+            TurnOff(this);
+            _objectPool.StockAdd(this);
+        }
     }
 }

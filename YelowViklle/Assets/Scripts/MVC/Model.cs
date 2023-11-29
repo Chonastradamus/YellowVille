@@ -15,18 +15,13 @@ public class Model : Rewind, Idamagable
     [SerializeField] float JumpForce;
     [SerializeField] LayerMask Ground;
 
-    [Header("Factory_Objetcpool")]
-    [SerializeField] public Bullet prefab;
-    Factory<Bullet> _factory;
-    ObjectPool<Bullet> _objectPool;
+    [SerializeField] GameObject pantallaPausa;
+
+
     public GameObject[] Firepoint;
     public GameObject[] Totem;
    // public GameManager gm;
   
-   
-    
-
-
 
     public override void Awake()
     {
@@ -42,12 +37,10 @@ public class Model : Rewind, Idamagable
         controller.OnTotem += Activetotem;
         controller.OffTotem += Desactivetotem;
         controller.Onshoot += shoot;
+        controller.gamepaused += ispaused;
 
         _view = new(_renderer, controller);
 
-
-        _factory = new BulletFactory(prefab);
-        _objectPool = new ObjectPool<Bullet>(_factory.GetObj, Bullet.TurnOff, Bullet.TurnOn, 4);
     }
 
     void Update()
@@ -91,8 +84,7 @@ public class Model : Rewind, Idamagable
     {
         foreach (var item in Firepoint)
         {
-            var bullet = _objectPool.Get();
-            bullet.AddReference(_objectPool);
+            var bullet = BuletManager.instance.GetBullet();
             bullet.transform.position = item.transform.position;
             bullet.transform.forward = item.transform.forward;  
         }
@@ -137,7 +129,21 @@ public class Model : Rewind, Idamagable
 
     }
 
-
+    public void ispaused(bool pause)
+    {
+        if (pause)
+        {
+            Debug.Log("pausa");
+            pantallaPausa.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Debug.Log("despausa");
+            pantallaPausa.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
 
 
 

@@ -11,7 +11,9 @@ public class Controller
     public event Action<float> Onshoot = delegate { };
     public event Action<bool> OnTotem = delegate { };
     public event Action<bool> OffTotem = delegate { };
+    public event Action<bool> gamepaused = delegate { };
 
+    bool pause = true;
 
     public Action onUpdate;
     public Action onJump;
@@ -29,7 +31,7 @@ public class Controller
         onUpdate += Attack;
         onUpdate += onTotem;
         onUpdate += offTotem;
-
+        onUpdate += ispause;
 
     }
 
@@ -73,5 +75,35 @@ public class Controller
 
         OffTotem(totem);
 
+    }
+
+    public void ispause()
+    {
+       
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
+            if (pause)
+            {
+                onUpdate -= Movement;
+                onUpdate -= Jump;
+                onUpdate -= Attack;
+                onUpdate -= onTotem;
+                onUpdate -= offTotem;
+                pause = false;
+                gamepaused(pause);
+            }
+            else if(!pause)
+            {
+                onUpdate += Movement;
+                onUpdate += Jump;
+                onUpdate += Attack;
+                onUpdate += onTotem;
+                onUpdate += offTotem;
+                pause = true;
+                gamepaused(pause);
+            }
+        }  
     }
 }

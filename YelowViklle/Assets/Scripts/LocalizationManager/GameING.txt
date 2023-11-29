@@ -1,0 +1,5 @@
+{
+"IDBSalir" : "Exit",
+"IDBOpcines" : "Options",
+"IDBPausa" : "Pause"
+}

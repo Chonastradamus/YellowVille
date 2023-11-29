@@ -130,3 +130,4 @@ MonoBehaviour:
   speed: 5
   counter: 10
   lifetime: 2
+  rb: {fileID: 0}
