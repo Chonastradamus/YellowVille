@@ -6,13 +6,11 @@ public class View
 {
     //tp1 Juan Guastini
     private Renderer _renderer;
-     GameObject[] _particules;
     //private Animator _anim;
 
-    public View(Renderer renderer, Controller controller , GameObject[] particule)
+    public View(Renderer renderer, Controller controller)
     {
         _renderer = renderer;
-        _particules = particule;
         controller.onMovement += OnMove;
     }
 

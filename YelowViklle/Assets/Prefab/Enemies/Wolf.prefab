@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2659546100960921564}
   - component: {fileID: 2659546100960921565}
   - component: {fileID: 2659546100960921563}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,6 +72,7 @@ MonoBehaviour:
   - {fileID: 0}
   IsInChaseRange: 0
   life: 0
+  Timechase: 5
   Isattacking: 0
   rendererwolf: {fileID: 2659546102723780490}
   Materials:
@@ -87,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2659546101667633604}
   - component: {fileID: 2659546101667633603}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +134,7 @@ GameObject:
   - component: {fileID: 2659546102723780491}
   - component: {fileID: 2659546102723780489}
   - component: {fileID: 2659546102723780490}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -15,8 +15,11 @@ public class Ewolf : EnemiesDamage
 
     private void Start()
     {
+        EventManager.Subscribe("chase", aviso);
         _view = new EWolfView().SetRenderer(rendererwolf).SetArrayMaterials(Materials).SetControler(this);
     }
+
+
     protected override void FixedUpdate()
     {
         base.FixedUpdate();

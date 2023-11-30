@@ -6,7 +6,7 @@ public class FlyWeightEnemies
 {
     public float Maxlife; //Lectura
     public float speed; //Lectura
-    public float Damage; //Lectura
+    public int Damage; //Lectura
     public float attackCooldown;
 
 }

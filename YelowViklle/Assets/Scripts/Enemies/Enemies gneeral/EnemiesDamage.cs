@@ -12,14 +12,14 @@ public abstract class EnemiesDamage : Enemies_Behavior
         Idamagable damagableInterface = collision.gameObject.GetComponent<Idamagable>();
         if (collision.gameObject.layer == whatIsPlayer || damagableInterface != null)
         {
+
             Isattacking = true;
             if (Isattacking)
             {
              damagableInterface.TakeDamage(FlyweightPointer.enemies.Damage);  
              Isattacking = false;
            
-            }
-        
+            }       
         }
     }
 

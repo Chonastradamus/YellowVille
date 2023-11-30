@@ -21,5 +21,11 @@ public static class FlyweightPointer
     {
            explosionTime = 3,
     };
+    public static readonly FlyWeightbullet bullet = new FlyWeightbullet()
+    {
+        Dmg = 1,
+    };
+
+
 
 }

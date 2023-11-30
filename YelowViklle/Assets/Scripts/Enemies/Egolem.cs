@@ -5,7 +5,8 @@ using UnityEngine;
 public class Egolem : EnemiesDamage
 {
     public Transform[] points;
-    public int PointNumber;
+
+    int PointNumber;
     //TP2 - *Juan ignacio Guastini*.
 
     protected override void Update()
