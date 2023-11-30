@@ -1,5 +1,5 @@
 {
 "IDBSalir" : "Salir",
-"IDBOpcines" : "Opciones"
+"IDBOpcines" : "Opciones",
 "IDBPausa" : "Pausa"
 }
